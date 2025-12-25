@@ -11,6 +11,10 @@ const userAuth = async (req, res, next) => {
     const tokenDecode = jwt.verify(token, process.env.JWT_SECRET);
 
     if (tokenDecode.id) {
+      // Check if req.body exists (it won't in GET requests)
+      if (!req.body) {
+        req.body = {};
+      }
       req.body.userId = tokenDecode.id;
     } else {
       return res.json({
@@ -21,7 +25,7 @@ const userAuth = async (req, res, next) => {
 
     next();
   } catch (error) {
-    res.json({ success: false, message: error.message });
+    return res.json({ success: false, message: error.message });
   }
 };
 
