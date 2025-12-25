@@ -35,6 +35,6 @@ Follow these steps to get the project running locally on your machine.
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/Happysingh1062003/Authentication-App.git](https://github.com/Happysingh1062003/Authentication-App.git)
+git clone https://github.com/Happysingh1062003/Authentication-App.git
 cd Authentication-App
 
